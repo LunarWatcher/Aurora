@@ -1,0 +1,47 @@
+vim begin
+
+vim end
+
+var PrimaryPink = "#F24AB2"
+var SecondaryPurple = "#C200E0"
+
+var Keyword = "#8824FF"
+var CommentGrey = "#6B6B6B"
+
+var NeonPink = "#FF10F0"
+var NeonPurple = "#9D00FF"
+var NeonRed = "#FD1C03"
+
+var ConstantColor = "#"
+
+# Cursors
+iCursor { guibg=%PrimaryPink }
+Cursor  { guibg=purple }
+
+# General feel
+
+Normal    { guibg=#eeeeee }
+Comment   { guifg=%CommentGrey gui=italic }
+
+String    { guifg=%PrimaryPink }
+Statement { guifg=%Keyword }
+Include   { link=Statement }
+
+Function  { guifg=%NeonPurple }
+Constant  { guifg=%NeonPink }
+Number    { guifg=#33DAFF }
+
+Type      { guifg=%NeonPink }
+
+
+# Coc.nvim
+
+CocUnderline { guifg=%NeonRed gui=undercurl }
+CocErrorSign { guifg=%NeonRed }
+
+# General Vim styling
+
+VertSplit { guibg=%PrimaryPink guifg=%PrimaryPink }
+LineNr { guifg=#adadad }
+CursorLineNr { guibg=#dedede guifg=%PrimaryPink gui=bold }
+
