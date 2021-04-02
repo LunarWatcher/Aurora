@@ -12,7 +12,7 @@ let s:CommentGrey = '#6B6B6B'
 let s:NeonPink = '#FF10F0'
 let s:NeonPurple = '#9D00FF'
 let s:NeonRed = '#FD1C03'
-let s:ConstantColor = '#'
+let s:DiscreteEmerald = '#00e0ad'
 " Cursors
 exec "hi iCursor guibg=" . s:PrimaryPink . ""
 hi Cursor  guibg=purple
@@ -21,11 +21,12 @@ hi Normal  guibg=#eeeeee
 exec "hi Comment guifg=" . s:CommentGrey . "  gui=italic"
 exec "hi String guifg=" . s:PrimaryPink . ""
 exec "hi Statement guifg=" . s:Keyword . ""
-hi link Include Statement
+hi! link Include Statement
 exec "hi Function guifg=" . s:NeonPurple . ""
 exec "hi Constant guifg=" . s:NeonPink . ""
 hi Number  guifg=#33DAFF
 exec "hi Type guifg=" . s:NeonPink . ""
+exec "hi Identifier guifg=" . s:DiscreteEmerald . ""
 " Begin languages
 " Markdown
 hi mkdUrl  guifg=#42d7f5 gui=underline
@@ -49,4 +50,4 @@ exec "hi WintabsActiveSepEmpty guifg=" . s:NeonPink . "  guibg=" . s:ComplementP
 exec "hi WintabsInactiveSepEmpty guibg=" . s:ComplementPurple . "  guifg=" . s:SecondaryPurple . ""
 exec "hi WintabsActiveSepInactive guifg=" . s:NeonPink . "  guibg=" . s:SecondaryPurple . ""
 exec "hi WintabsActiveSepEmptyNC guifg=" . s:PrimaryPink . "  guibg=" . s:ComplementPurple . ""
-hi link WintabsInactiveSepEmptyNC WintabsActiveSepEmpty
+hi! link WintabsInactiveSepEmptyNC WintabsActiveSepEmpty

@@ -14,8 +14,7 @@ var NeonPink = "#FF10F0"
 var NeonPurple = "#9D00FF"
 var NeonRed = "#FD1C03"
 
-var ConstantColor = "#"
-
+var DiscreteEmerald = "#00e0ad"
 # Cursors
 iCursor { guibg=%PrimaryPink }
 Cursor  { guibg=purple }
@@ -34,6 +33,7 @@ Constant  { guifg=%NeonPink }
 Number    { guifg=#33DAFF }
 
 Type      { guifg=%NeonPink }
+Identifier { guifg=%DiscreteEmerald }
 
 # Begin languages
 
