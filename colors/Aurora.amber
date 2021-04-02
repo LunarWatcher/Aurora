@@ -5,6 +5,8 @@ vim end
 var PrimaryPink = "#F24AB2"
 var SecondaryPurple = "#C200E0"
 
+var ComplementPurple = "#8000D5"
+
 var Keyword = "#8824FF"
 var CommentGrey = "#6B6B6B"
 
@@ -33,7 +35,12 @@ Number    { guifg=#33DAFF }
 
 Type      { guifg=%NeonPink }
 
+# Begin languages
 
+# Markdown
+mkdUrl    { guifg=#42d7f5 gui=underline }
+
+# End languages
 # Coc.nvim
 
 CocUnderline { guifg=%NeonRed gui=undercurl }
@@ -44,4 +51,22 @@ CocErrorSign { guifg=%NeonRed }
 VertSplit { guibg=%PrimaryPink guifg=%PrimaryPink }
 LineNr { guifg=#adadad }
 CursorLineNr { guibg=#dedede guifg=%PrimaryPink gui=bold }
+
+# Tabline
+TabLine     { guibg=%SecondaryPurple guifg=#dddddd gui=none }
+TabLineFill { guibg=%SecondaryPurple }
+TabLineSel  { guibg=%NeonPink gui=none }
+
+# Wintabs
+WintabsEmpty     { guibg=%ComplementPurple }
+
+# Link separators
+WintabsInactiveSepActive  { guifg=%SecondaryPurple guibg=%NeonPink }
+WintabsActiveSepEmpty     { guifg=%NeonPink guibg=%ComplementPurple }
+WintabsInactiveSepEmpty   { guibg=%ComplementPurple guifg=%SecondaryPurple }
+
+WintabsActiveSepInactive  { guifg=%NeonPink guibg=%SecondaryPurple }
+
+WintabsActiveSepEmptyNC   { guifg=%PrimaryPink guibg=%ComplementPurple }
+WintabsInactiveSepEmptyNC { link=WintabsActiveSepEmpty }
 
