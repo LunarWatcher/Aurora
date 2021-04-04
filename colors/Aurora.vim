@@ -54,10 +54,10 @@ hi! link WintabsInactiveSepEmptyNC WintabsActiveSepEmpty
 " Easter egg
 augroup AuroraEasterEgg
     au!
-    au Filetype * syn match TransRoot /\c\vt+r+a+n+s+/ contains=TransBlue,TransPink,TransWhite
-    au Filetype * syn match TransBlue /\c\v[ts]+/ contained
-    au Filetype * syn match TransPink /\c\v[rn]+/ contained
-    au Filetype * syn match TransWhite /\c\v[a]+/ contained
+    au BufEnter * syn match TransRoot /\c\vt+r+a+n+s+/ contains=TransBlue,TransPink,TransWhite
+    au BufEnter * syn match TransBlue /\c\v[ts]+/ contained
+    au BufEnter * syn match TransPink /\c\v[rn]+/ contained
+    au BufEnter * syn match TransWhite /\c\v[a]+/ contained
 augroup END
 hi TransBlue  guibg=#55CDFC
 hi TransPink  guibg=#F7A8B8
