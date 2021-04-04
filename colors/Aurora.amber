@@ -1,6 +1,3 @@
-vim begin
-
-vim end
 
 var PrimaryPink = "#F24AB2"
 var SecondaryPurple = "#C200E0"
@@ -70,3 +67,17 @@ WintabsActiveSepInactive  { guifg=%NeonPink guibg=%SecondaryPurple }
 WintabsActiveSepEmptyNC   { guifg=%PrimaryPink guibg=%ComplementPurple }
 WintabsInactiveSepEmptyNC { link=WintabsActiveSepEmpty }
 
+# Easter egg
+begin vim
+augroup AuroraEasterEgg
+    au!
+    au Filetype * syn match TransRoot /\c\vt+r+a+n+s+/ contains=TransBlue,TransPink,TransWhite
+    au Filetype * syn match TransBlue /\c\v[ts]+/ contained
+    au Filetype * syn match TransPink /\c\v[rn]+/ contained
+    au Filetype * syn match TransWhite /\c\v[a]+/ contained
+augroup END
+end vim
+
+TransBlue   { guibg=#55CDFC }
+TransPink   { guibg=#F7A8B8 }
+TransWhite  { guibg=#FFFFFF }

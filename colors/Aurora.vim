@@ -51,3 +51,14 @@ exec "hi WintabsInactiveSepEmpty guibg=" . s:ComplementPurple . "  guifg=" . s:S
 exec "hi WintabsActiveSepInactive guifg=" . s:NeonPink . "  guibg=" . s:SecondaryPurple . ""
 exec "hi WintabsActiveSepEmptyNC guifg=" . s:PrimaryPink . "  guibg=" . s:ComplementPurple . ""
 hi! link WintabsInactiveSepEmptyNC WintabsActiveSepEmpty
+" Easter egg
+augroup AuroraEasterEgg
+    au!
+    au Filetype * syn match TransRoot /\c\vt+r+a+n+s+/ contains=TransBlue,TransPink,TransWhite
+    au Filetype * syn match TransBlue /\c\v[ts]+/ contained
+    au Filetype * syn match TransPink /\c\v[rn]+/ contained
+    au Filetype * syn match TransWhite /\c\v[a]+/ contained
+augroup END
+hi TransBlue  guibg=#55CDFC
+hi TransPink  guibg=#F7A8B8
+hi TransWhite  guibg=#FFFFFF
