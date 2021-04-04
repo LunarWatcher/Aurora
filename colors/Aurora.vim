@@ -51,14 +51,17 @@ exec "hi WintabsInactiveSepEmpty guibg=" . s:ComplementPurple . "  guifg=" . s:S
 exec "hi WintabsActiveSepInactive guifg=" . s:NeonPink . "  guibg=" . s:SecondaryPurple . ""
 exec "hi WintabsActiveSepEmptyNC guifg=" . s:PrimaryPink . "  guibg=" . s:ComplementPurple . ""
 hi! link WintabsInactiveSepEmptyNC WintabsActiveSepEmpty
-" Easter egg
-augroup AuroraEasterEgg
-    au!
-    au BufEnter * syn match TransRoot /\c\vt+r+a+n+s+/ contains=TransBlue,TransPink,TransWhite
-    au BufEnter * syn match TransBlue /\c\v[ts]+/ contained
-    au BufEnter * syn match TransPink /\c\v[rn]+/ contained
-    au BufEnter * syn match TransWhite /\c\v[a]+/ contained
-augroup END
 hi TransBlue  guibg=#55CDFC
 hi TransPink  guibg=#F7A8B8
 hi TransWhite  guibg=#FFFFFF
+" Easter egg
+fun! AuroraEasterEggHighlights()
+    syn match TransRoot /\c\vt+r+a+n+s+/ containedin=ALLBUT,TransRoot contains=TransWhite,TransBlue,TransPink
+    syn match TransBlue /\v[TtSs]+/ contained
+    syn match TransPink /\v[RrNn]+/ contained
+    syn match TransWhite /\v[Aa]+/ contained
+endfun
+augroup AuroraEasterEgg
+    au!
+    au BufWinEnter * call EasterEggHighlights()
+augroup END

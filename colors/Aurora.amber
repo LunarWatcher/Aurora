@@ -67,17 +67,22 @@ WintabsActiveSepInactive  { guifg=%NeonPink guibg=%SecondaryPurple }
 WintabsActiveSepEmptyNC   { guifg=%PrimaryPink guibg=%ComplementPurple }
 WintabsInactiveSepEmptyNC { link=WintabsActiveSepEmpty }
 
-# Easter egg
-begin vim
-augroup AuroraEasterEgg
-    au!
-    au BufEnter * syn match TransRoot /\c\vt+r+a+n+s+/ contains=TransBlue,TransPink,TransWhite
-    au BufEnter * syn match TransBlue /\c\v[ts]+/ contained
-    au BufEnter * syn match TransPink /\c\v[rn]+/ contained
-    au BufEnter * syn match TransWhite /\c\v[a]+/ contained
-augroup END
-end vim
-
 TransBlue   { guibg=#55CDFC }
 TransPink   { guibg=#F7A8B8 }
 TransWhite  { guibg=#FFFFFF }
+
+# Easter egg
+begin vim
+
+fun! AuroraEasterEggHighlights()
+    syn match TransRoot /\c\vt+r+a+n+s+/ containedin=ALLBUT,TransRoot contains=TransWhite,TransBlue,TransPink
+    syn match TransBlue /\v[TtSs]+/ contained
+    syn match TransPink /\v[RrNn]+/ contained
+    syn match TransWhite /\v[Aa]+/ contained
+endfun
+
+augroup AuroraEasterEgg
+    au!
+    au BufWinEnter * call EasterEggHighlights()
+augroup END
+end vim
